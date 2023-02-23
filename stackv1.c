@@ -87,9 +87,10 @@ int main()
         kol -= kol / 2 + kol / 4;
     }
     time_t end = clock();
-    printf("The elapsed time is %ld ms\n", end - begin);
+    printf("The elapsed time test 1 is %ld ms\n", end - begin);
     stack_dtr(st);
     //2 test
+    begin = clock();
     Stack *s1 = stack_ctr(100, sizeof(int));
     kol = 1000000;
     int count = 0;
@@ -100,6 +101,8 @@ int main()
         count++;
     }
     stack_dtr(s1);
+    end = clock();
+    printf("The elapsed time test 2 is %ld ms\n", end - begin);
     //3 test
     Stack *s2 = stack_ctr(100, sizeof(int));
     count = 0;
@@ -124,7 +127,7 @@ int main()
         if(kol == 1000000)
         {
             time_t end = clock();
-//            printf("The elapsed time is %ld ms\n", end - begin);
+            printf("The elapsed time test 3 is %ld ms\n", end - begin);
 
         }
     }
